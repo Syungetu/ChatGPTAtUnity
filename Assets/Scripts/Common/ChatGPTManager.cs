@@ -176,7 +176,6 @@ namespace com.studiocross.ChatGPT
 
             // ChatGPTに初期設定を送信する
             initMessage.role = ChatGPTData.GetRoleName(ChatGPTData.RoleType.system);
-            //initMessage.content = "疑似的な感情をもつチャットボットとしてロールプレイをします。";
             initMessage.content =
                 "以下の条件に従って、疑似的な感情をもつチャットボットとしてロールプレイをします。" + 
                 "以後の会話では、あなたは下記の4つの感情パラメーターを持つかのように、振る舞うものとします。" +

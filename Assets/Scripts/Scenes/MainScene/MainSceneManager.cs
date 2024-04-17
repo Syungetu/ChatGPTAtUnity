@@ -21,6 +21,9 @@ public class MainSceneManager : MonoBehaviour
     /// <summary> 悲しみ数値 </summary>
     public ValueTextManager _SedText;
 
+    /// <summary> モデルの表情管理 </summary>
+    public ChatGPTFacialExpressionManager _ChatGPTFacialExpressionManager;
+
     [Header("会話")]
     /// <summary> 会話テキスト </summary>
     public ValueTextManager _TalkText;
@@ -87,6 +90,14 @@ public class MainSceneManager : MonoBehaviour
         _FunText.SetText(emotion.Fun.ToString());
         _AngerText.SetText(emotion.Anger.ToString());
         _SedText.SetText(emotion.Sad.ToString());
+        if (_ChatGPTFacialExpressionManager != null)
+        {
+            _ChatGPTFacialExpressionManager.GetTextChange();
+            _ChatGPTFacialExpressionManager._Joy = emotion.Joy / 100.0f;
+            _ChatGPTFacialExpressionManager._Fun = emotion.Fun / 100.0f;
+            _ChatGPTFacialExpressionManager._Anger = emotion.Anger / 100.0f;
+            _ChatGPTFacialExpressionManager._Sad = emotion.Sad / 100.0f;
+        }
     }
 
     /// <summary>
